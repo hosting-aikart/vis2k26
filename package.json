@@ -1,0 +1,7 @@
+{
+  "name": "vis2k26",
+  "private": true,
+  "scripts": {
+    "dev": "npx --yes serve@14 -l 3000 ."
+  }
+}
