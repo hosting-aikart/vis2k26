@@ -3,19 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Hackathon · Vidarbha Innovation Summit 2026</title>
-  <meta name="description" content="A 12-hour hackathon in Amravati on real Vidarbha problems. ₹1,00,000 in prizes, with the best solutions taken to field pilots. Part of Vidarbha Innovation Summit 2026 by AIKart and Sant Gadge Baba Amravati University.">
+  <title>Vidarbh Innovation Summit 2026 | From Vidarbha to Global</title>
+  <meta name="description" content="One platform where Vidarbha's students, startups, incubators, investors and government departments come together to build, pitch and grow. Amravati, Maharashtra.">
   <meta name="theme-color" content="#050507">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Hackathon · Vidarbha Innovation Summit 2026">
-  <meta property="og:description" content="12 hours. Real Vidarbha problems. ₹1,00,000 in prizes.">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="Vidarbh Innovation Summit 2026">
+  <meta property="og:description" content="Hackathon, investor pitching and a startup expo in Amravati, Maharashtra.">
+  <link rel="icon" href="assets/logo-icon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script>document.documentElement.classList.add('js')</script>
   <script src="main.js" defer></script>
+  <script src="forms.js" defer></script>
   <script src="hero.js" defer></script>
 </head>
 <body>
@@ -23,333 +24,630 @@
 
   <header class="nav" data-nav>
     <div class="wrap nav__row">
-      <a class="brand" href="#top" aria-label="Vidarbha Innovation Summit 2026, home">
-        <img class="brand__mark" src="assets/favicon.svg" alt="">
-        <span class="brand__text">VIS<b>2k26</b></span>
+      <a class="brand" href="#overview" aria-label="Vidarbh Innovation Summit 2026, overview">
+        <img class="brand__logo" src="assets/logo.webp" alt="" width="390" height="129">
       </a>
       <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="nav-links" data-nav-toggle>
         <span class="sr">Menu</span><i></i><i></i>
       </button>
       <nav class="nav__links" id="nav-links" aria-label="Main">
-        <a href="#tracks">Tracks</a>
-        <a href="#prizes">Prizes</a>
-        <a href="#path">How it works</a>
-        <a href="#anthropic">Anthropic</a>
-        <a href="#faq">FAQ</a>
+        <a href="#overview" data-tab="overview">Overview</a>
+        <a href="#hackathon" data-tab="hackathon">Hackathon</a>
+        <a href="#pitching" data-tab="pitching">Pitching</a>
+        <a href="#expo" data-tab="expo">Expo &amp; Demos</a>
+        <a class="nav__mreg" href="#register-team">Register</a>
       </nav>
-      <a class="btn btn--sm nav__cta" href="#register" data-register>Register</a>
+      <a class="btn btn--sm nav__cta" href="#register-team">Register</a>
     </div>
   </header>
 
   <main id="main">
-    <section class="hero" id="top">
-      <canvas class="hero__canvas" data-hero-canvas aria-hidden="true"></canvas>
-      <div class="hero__star" data-hero-star aria-hidden="true"></div>
-      <div class="wrap hero__inner">
-        <p class="hero__kicker rise">Vidarbha Innovation Summit 2026 · Hackathon</p>
-        <h1 class="hero__title rise">
-          <span>Twelve hours.</span>
-          <span>One real <em>Vidarbha problem.</em></span>
-        </h1>
-        <p class="hero__lead rise">Build a working solution in one intensive day, then test the best ideas with the department that gave the problem.</p>
-        <div class="hero__cta rise">
-          <a class="btn" href="#register" data-register>Register your team <span aria-hidden="true">→</span></a>
+
+    <!-- Overview -->
+    <div class="view" id="view-overview" data-view="overview">
+      <section class="hero" id="top">
+        <canvas class="hero__canvas" data-hero-canvas aria-hidden="true"></canvas>
+        <div class="hero__star" data-hero-star aria-hidden="true"></div>
+        <div class="wrap hero__inner">
+          <p class="hero__kicker rise">Viksit Bharat · From Vidarbha to Global</p>
+          <h1 class="hero__title rise">
+            <span>Vidarbh Innovation</span>
+            <span><em>Summit 2026</em></span>
+          </h1>
+          <p class="hero__lead rise">One platform where Vidarbha's students, startups, incubators, investors and government departments come together to build, pitch and grow.</p>
+          <div class="hero__cta rise">
+            <a class="btn" href="#hackathon">Join the Hackathon <span aria-hidden="true">→</span></a>
+            <a class="btn btn--ghost" href="#pitching">Pitch your startup</a>
+          </div>
         </div>
-      </div>
-      <div class="hero__stage"></div>
-      <dl class="wrap hero__meta">
-        <div><dt>Venue</dt><dd>University campus, Amravati</dd></div>
-        <div><dt>Proposed dates</dt><dd>11–12 Dec · 18–19 Dec 2026 · 8–9 Jan 2027</dd></div>
-      </dl>
-    </section>
+        <div class="hero__stage"></div>
+        <dl class="wrap hero__meta">
+          <div><dt>Venue</dt><dd>Amravati, Maharashtra</dd></div>
+          <div><dt>Hackathon prize</dt><dd>₹1,00,000</dd></div>
+          <div><dt>Incubators</dt><dd>20+ at the expo</dd></div>
+        </dl>
+      </section>
 
-    <section class="stats" aria-label="The hackathon in numbers">
-      <div class="wrap stats__row">
-        <div><strong>₹1,00,000</strong><span>Prize pool</span></div>
-        <div><strong>12</strong><span>Hours to build</span></div>
-        <div><strong>30–50</strong><span>Finalist teams</span></div>
-        <div><strong>11</strong><span>Vidarbha districts</span></div>
-      </div>
-    </section>
+      <div class="subnav" data-subnav></div>
 
-    <section class="section" id="why">
-      <div class="wrap">
-        <p class="eyebrow reveal">Why this hackathon</p>
-        <h2 class="reveal">From a real problem to a field pilot</h2>
-        <ol class="flow">
-          <li class="flow__item reveal">
-            <span class="flow__num">01</span>
-            <h3>Real problem</h3>
-            <p>Departments, farmers and industry give direct problem statements.</p>
-          </li>
-          <li class="flow__item reveal">
-            <span class="flow__num">02</span>
-            <h3>12-hour prototype</h3>
-            <p>Young teams build a working technical solution in one intensive day.</p>
-          </li>
-          <li class="flow__item reveal">
-            <span class="flow__num">03</span>
-            <h3>Field pilot</h3>
-            <p>The best solutions are tested directly with the department that gave the problem.</p>
-          </li>
-        </ol>
-        <p class="banner reveal">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>
-          The work continues for 90 days after the summit, with pilots, incubation and investor follow-ups.
-        </p>
-      </div>
-    </section>
-
-    <section class="section section--alt" id="tracks">
-      <div class="wrap">
-        <p class="eyebrow reveal">Tracks</p>
-        <h2 class="reveal">Technology for Vidarbha’s real needs</h2>
-        <p class="lead reveal">Six themes guide the challenge. The final 4–5 problem statements, each with a department or industry owner and sample data, will be published with the rules.</p>
-        <ul class="tracks">
-          <li class="track reveal">
-            <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 15h12M26 15h12M24 15v5M18 20h12l-2 6h-8z"/><path d="M20 26l-6 12M28 26l6 12"/></svg>
-            <h3>AI, Robotics &amp; Drones</h3>
-            <p>Advanced tech applications across sectors.</p>
-          </li>
-          <li class="track reveal">
-            <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 40V20M24 26c-8 0-12-4-12-10 7 0 12 3 12 10zM24 22c0-7 5-11 12-11 0 7-5 11-12 11z"/><path d="M8 40h32"/></svg>
-            <h3>Agriculture</h3>
-            <p>Crop pests, pricing intelligence and water use.</p>
-          </li>
-          <li class="track reveal">
-            <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="12" y="6" width="20" height="36" rx="4"/><path d="M18 16h12M18 23h8"/><path d="M28 28h12v9h-7l-4 4v-4h-1z"/></svg>
-            <h3>Local Language AI</h3>
-            <p>Marathi and Varhadi tools for government schemes.</p>
-          </li>
-          <li class="track reveal">
-            <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 28h9l4-10 6 18 4-8h13"/><path d="M34 8v10M29 13h10"/></svg>
-            <h3>Rural Health</h3>
-            <p>Health workers, nutrition and remote care tools.</p>
-          </li>
-          <li class="track reveal">
-            <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="19" cy="19" r="7"/><path d="M19 5v3M19 30v3M5 19h3M30 19h3M9 9l2 2M27 27l2 2M9 29l2-2M27 11l2-2"/><path d="M36 22s7 8 7 13a7 7 0 0 1-14 0c0-5 7-13 7-13z"/></svg>
-            <h3>Public Services &amp; Climate</h3>
-            <p>Cyber safety, heat, drought and water planning.</p>
-          </li>
-          <li class="track reveal">
-            <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 40V22l11 7v-7l11 7V10h9v30z"/><path d="M6 40h36M14 34h3M23 34h3M32 34h3"/></svg>
-            <h3>Industry &amp; MSMEs</h3>
-            <p>Textile, manufacturing and small business support.</p>
-          </li>
-          <li class="track track--open reveal">
-            <div>
-              <h3>Open track</h3>
-              <p>Have your own idea for the region? Bring it. The hackathon keeps one track open beyond the listed problem statements.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="prizes" id="prizes">
-      <span class="coin coin--a" aria-hidden="true">₹</span>
-      <span class="coin coin--b" aria-hidden="true">₹</span>
-      <span class="coin coin--c" aria-hidden="true">₹</span>
-      <span class="coin coin--d" aria-hidden="true">₹</span>
-      <div class="wrap">
-        <p class="prizes__kicker reveal">What will you get?</p>
-        <h2 class="prizes__title reveal">
-          Total prize pool of
-          <span class="scribble">
-            <span data-count="100000">₹1,00,000</span>
-            <svg viewBox="0 0 300 16" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M4 11C62 5 118 4 176 6c38 1 76 1 120-1-38 3-76 6-112 9"/></svg>
-          </span>
-        </h2>
-
-        <ol class="podium" data-podium>
-          <li class="podium__col podium__col--1">
-            <div class="podium__card"><strong data-count="50000">₹50,000</strong><span>1st prize</span></div>
-            <div class="podium__step" aria-hidden="true">1</div>
-          </li>
-          <li class="podium__col podium__col--2">
-            <div class="podium__card"><strong data-count="30000">₹30,000</strong><span>2nd prize</span></div>
-            <div class="podium__step" aria-hidden="true">2</div>
-          </li>
-          <li class="podium__col podium__col--3">
-            <div class="podium__card"><strong data-count="20000">₹20,000</strong><span>3rd prize</span></div>
-            <div class="podium__step" aria-hidden="true">3</div>
-          </li>
-        </ol>
-
-        <ul class="perks">
-          <li class="reveal"><b>Consolation prizes</b><span>For other teams beyond the top three.</span></li>
-          <li class="reveal"><b>Day 2 showcase</b><span>Top teams move to the expo and showcase at PDMC, Amravati.</span></li>
-          <li class="reveal"><b>Incubation offers</b><span>For winning teams, with 20+ incubation centres in the room.</span></li>
-          <li class="reveal"><b>Certificates</b><span>Awarded at the results on the day.</span></li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section" id="path">
-      <div class="wrap path">
-        <div class="path__head">
-          <p class="eyebrow reveal">How it works</p>
-          <h2 class="reveal">Your path to the final</h2>
-          <p class="lead reveal">Expect 300–400 registrations. Only 30–50 teams reach the hall, so make your first round count.</p>
+      <section class="section section--alt" id="dates" data-nav="Key dates">
+        <div class="wrap">
+          <p class="eyebrow reveal">Key dates</p>
+          <h2 class="reveal">The road to Summit Day</h2>
+          <ol class="dates">
+            <li class="reveal"><b>3 Nov 2026</b><span>Launch and registrations open</span></li>
+            <li class="reveal"><b>1st week of Nov</b><span>Startup applications open</span><i>Pitching</i></li>
+            <li class="reveal"><b>Early Dec</b><span>Applications close</span><i>Hackathon</i><i>Pitching</i></li>
+            <li class="reveal"><b>2nd week of Dec</b><span>Hackathon online round</span><i>Hackathon</i></li>
+            <li class="reveal"><b>Mid to late Dec</b><span>Hackathon physical round</span><i>Hackathon</i></li>
+            <li class="reveal"><b>To be announced</b><span>Grand finale and Summit Day</span></li>
+          </ol>
+          <p class="note reveal">Exact dates will be published here.</p>
         </div>
-        <ol class="steps">
-          <li class="reveal"><h3>Register</h3><p>Sign up online with your team members, college, district, skills and idea.</p></li>
-          <li class="reveal"><h3>Round 1: online screening</h3><p>Submit a one-page idea and a 2-minute video. A panel scores every entry.</p></li>
-          <li class="reveal"><h3>Shortlist</h3><p>30–50 teams are selected, with a waitlist of 10 in case of drop-outs. Results go to all applicants.</p></li>
-          <li class="reveal"><h3>Confirm and prepare</h3><p>Selected teams confirm by a set date and receive data packs and preparation material.</p></li>
-          <li class="reveal"><h3>Hackathon: Day 1</h3><p>Twelve hours on the university campus, on real problems, with mentors in the room.</p></li>
-          <li class="reveal"><h3>Day 2 and beyond</h3><p>Top teams present at the expo, then continue into pilots and incubation.</p></li>
-        </ol>
-      </div>
-    </section>
+      </section>
 
-    <section class="section section--alt" id="day">
-      <div class="wrap">
-        <p class="eyebrow reveal">On the day</p>
-        <h2 class="reveal">Inside the 12 hours</h2>
-        <div class="clock reveal" data-clock aria-hidden="true">
-          <div class="clock__fill"></div>
-          <div class="clock__ticks"></div>
-          <div class="clock__labels"><span>Hour 0</span><span>Hour 6</span><span>Hour 12</span></div>
+      <section class="section" id="about" data-nav="About">
+        <div class="wrap split">
+          <div>
+            <p class="eyebrow reveal">About the summit</p>
+            <h2 class="reveal">Built in Vidarbha, for the world</h2>
+            <p class="lead reveal">The Vidarbh Innovation Summit brings the region's whole innovation ecosystem onto one platform. New startups meet more than 20 incubators, investors and panels in one place, something not available elsewhere in the region.</p>
+            <p class="lead reveal">Students and startups bring their own ideas to solve real problems in Vidarbha, in any domain. The strongest solutions are shown at the summit, in front of the people who can fund, incubate or adopt them.</p>
+            <p class="lead reveal">The summit is a joint initiative of aiKart and SGBAU Research and Incubation Foundation, Sant Gadge Baba Amravati University.</p>
+          </div>
+          <figure class="photo reveal">
+            <img src="assets/photos/ambadevi.webp" alt="The entrance of Ambadevi Temple in Amravati" loading="lazy">
+            <figcaption>Ambadevi Temple, Amravati, the summit's host city</figcaption>
+          </figure>
         </div>
-        <ol class="beats">
-          <li class="reveal"><b>Start</b><h3>Check-in and briefing</h3><p>Collect your team kit, then walk through the problem statements.</p></li>
-          <li class="reveal"><b>All day</b><h3>Mentor rounds</h3><p>Mentors on a 2-hour rotation move through the hall.</p></li>
-          <li class="reveal"><b>Hour 6</b><h3>Progress check</h3><p>See where your team stands, with time left to change course.</p></li>
-          <li class="reveal"><b>Hour 12</b><h3>Final submission</h3><p>All work goes in a new code repository started that day.</p></li>
-          <li class="reveal"><b>Finish</b><h3>Judging and results</h3><p>Judges have no link to any team. Results and certificates follow.</p></li>
-        </ol>
-        <p class="provided reveal"><b>We take care of the rest:</b> tables, power points, Wi-Fi, a help desk, and food and water for the full 12 hours.</p>
-      </div>
-    </section>
-
-    <section class="section section--alt" id="anthropic">
-      <div class="wrap collab">
-        <div class="collab__head">
-          <p class="eyebrow reveal">Technology partner</p>
-          <h2 class="reveal">In collaboration with Anthropic</h2>
-          <p class="lead reveal">Anthropic, the company behind Claude, joins the hackathon as a technology partner. Details for teams will be shared with the final rules.</p>
-        </div>
-        <ul class="ideas">
-          <li class="reveal"><h3>Speak the region’s language</h3><p>Explore Marathi and Varhadi assistants that explain government schemes in plain words.</p></li>
-          <li class="reveal"><h3>Turn documents into answers</h3><p>Make scheme rules, crop advisories and department data easy for people to query.</p></li>
-          <li class="reveal"><h3>Ship inside the 12 hours</h3><p>Use Claude Code to go from a new repository to a working demo.</p></li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="section" id="who">
-      <div class="wrap who">
-        <div>
-          <p class="eyebrow reveal">Who can join</p>
-          <h2 class="reveal">Open to Vidarbha’s young builders</h2>
-          <ul class="checks">
-            <li class="reveal">Students and young innovators</li>
-            <li class="reveal">College teams or independent teams</li>
-            <li class="reveal">Reach across all 11 districts of Vidarbha, through 40 active colleges</li>
-            <li class="reveal">Teams from other regions can apply too, with a fair mix kept in the shortlist</li>
+        <div class="wrap">
+          <ul class="cards cards--4">
+            <li class="card reveal"><h3>Students and innovators</h3><p>From colleges across Vidarbha and beyond.</p></li>
+            <li class="card reveal"><h3>Startups</h3><p>Early and growth-stage companies from every sector.</p></li>
+            <li class="card reveal"><h3>Investors and incubators</h3><p>20+ incubators and investors looking for the next growth story.</p></li>
+            <li class="card reveal"><h3>Government</h3><p>Departments looking for solutions they can adopt.</p></li>
           </ul>
         </div>
-        <figure class="map reveal">
-          <svg viewBox="100 235 720 410" role="img" aria-label="Schematic map linking Amravati to the 10 other Vidarbha districts">
-            <g class="map__lines">
-              <path d="M400 376L283 414L173 445"/><path d="M400 376L287 543"/><path d="M400 376L423 551"/>
-              <path d="M400 376L533 475"/><path d="M400 376L620 597"/><path d="M400 376L741 543"/>
-              <path d="M400 376L590 361L696 353"/><path d="M400 376L749 270"/>
-            </g>
-            <circle class="map__halo" cx="400" cy="376" r="54"/>
-            <circle class="map__halo" cx="400" cy="376" r="34"/>
-            <circle class="map__hub" cx="400" cy="376" r="20"/>
-            <g class="map__nodes">
-              <circle cx="173" cy="445" r="10"/><circle cx="283" cy="414" r="10"/><circle cx="287" cy="543" r="10"/>
-              <circle cx="423" cy="551" r="10"/><circle cx="533" cy="475" r="10"/><circle cx="620" cy="597" r="10"/>
-              <circle cx="741" cy="543" r="10"/><circle cx="590" cy="361" r="10"/><circle cx="696" cy="353" r="10"/>
-              <circle cx="749" cy="270" r="10"/>
-            </g>
-            <g class="map__labels" text-anchor="middle">
-              <text x="173" y="480">Buldhana</text><text x="283" y="449">Akola</text><text x="287" y="578">Washim</text>
-              <text x="423" y="586">Yavatmal</text><text x="533" y="510">Wardha</text><text x="620" y="632">Chandrapur</text>
-              <text x="741" y="578">Gadchiroli</text><text x="590" y="396">Nagpur</text><text x="696" y="388">Bhandara</text>
-              <text x="749" y="305">Gondia</text>
-              <text class="map__amravati" x="400" y="458">Amravati</text>
-            </g>
-          </svg>
-          <figcaption>District layout is schematic, not to scale.</figcaption>
-        </figure>
-      </div>
-    </section>
+      </section>
 
-    <section class="section section--alt" id="faq">
-      <div class="wrap faq">
-        <div>
-          <p class="eyebrow reveal">FAQ</p>
-          <h2 class="reveal">Good questions</h2>
+      <section class="section section--alt" id="agenda" data-nav="Agenda">
+        <div class="wrap">
+          <p class="eyebrow reveal">Agenda</p>
+          <h2 class="reveal">Summit Day</h2>
+          <p class="lead reveal">A full day of exhibitions, pitching and discussion. The date will be announced shortly.</p>
+          <div class="agenda reveal">
+            <div class="agenda__head"><h3>Summit Day programme</h3><span>Amravati · 9:00 AM to 7:00 PM</span></div>
+            <ol>
+              <li><b>9:00 AM</b><div><h3>Registration and entry</h3><p>QR-based entry for all visitors and delegates.</p></div></li>
+              <li><b>All day</b><div><h3>Startup and incubator expo</h3><p>Curated startups and 20+ incubators with stalls and live demos. <a href="#expo">Expo details</a></p></div></li>
+              <li><b>All day</b><div><h3>Hackathon showcase</h3><p>Hackathon finalists show their working solutions at a dedicated station. <a href="#hackathon">Hackathon details</a></p></div></li>
+              <li><b>Through the day</b><div><h3>Investor pitching</h3><p>Selected startups pitch to investors. <a href="#pitching">Pitching details</a></p></div></li>
+              <li><b>Through the day</b><div><h3>Panel discussions</h3><p>Leaders from government, industry, incubators and investment on growing Vidarbha's startup ecosystem.</p></div></li>
+              <li><b>Through the day</b><div><h3>Government departments connect</h3><p>Police and cyber cell, MIDC, District Industries Centre, agriculture and other departments meet startups and teams.</p></div></li>
+            </ol>
+          </div>
+          <p class="note reveal">Session timings will be added once the summit date is final.</p>
         </div>
-        <div class="faq__list reveal">
-          <details>
-            <summary>When is the hackathon?</summary>
-            <p>Three dates are proposed: 11–12 Dec 2026, 18–19 Dec 2026, or 8–9 Jan 2027. The hackathon is Day 1 of the summit. The final date will be announced here.</p>
-          </details>
-          <details>
-            <summary>How big can a team be, and is there a fee?</summary>
-            <p>Team size and the team fee will be announced with the rules, before registration opens.</p>
-          </details>
-          <details>
-            <summary>Do we have to be from Vidarbha?</summary>
-            <p>No. The hackathon is built around Vidarbha’s problems, and the shortlist keeps a fair mix of Vidarbha and other regions.</p>
-          </details>
-          <details>
-            <summary>What if someone on our team is under 18?</summary>
-            <p>Under-18 participants need parent consent. Selected teams also complete a photo consent form.</p>
-          </details>
-          <details>
-            <summary>Can we start building before the day?</summary>
-            <p>You can prepare your idea, and data packs are sent to selected teams in advance. All submitted work must be in a new code repository started on the day.</p>
-          </details>
-          <details>
-            <summary>What if we land on the waitlist?</summary>
-            <p>A waitlist of 10 teams is kept in case of drop-outs. If a place opens, a waitlisted team can move up.</p>
-          </details>
-          <details>
-            <summary>Who owns what we build?</summary>
-            <p>IP terms will be set out in the participant rules, published alongside the code of conduct.</p>
-          </details>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="register" id="register">
-      <div class="wrap register__row">
-        <div>
-          <p class="register__big reveal">Let’s build Vidarbha!</p>
-          <h2 class="reveal">Get your team ready</h2>
-          <p class="lead reveal" data-register-note>Registration opens soon. Start lining up what you’ll need.</p>
-          <a class="btn is-off reveal" data-register data-register-main aria-disabled="true">Registration opens soon</a>
-        </div>
-        <div class="kit reveal">
-          <h3>What you’ll need</h3>
-          <ul>
-            <li>Team member details</li>
-            <li>College and district</li>
-            <li>Your team’s skills</li>
-            <li>A one-page idea</li>
-            <li>A 2-minute video</li>
+      <section class="section" id="tracks" data-nav="Ways to take part">
+        <div class="wrap">
+          <p class="eyebrow reveal">Ways to take part</p>
+          <h2 class="reveal">Choose your track</h2>
+          <p class="lead reveal">Each track has its own page with the full details.</p>
+          <ul class="cards cards--3">
+            <li class="card card--photo reveal">
+              <img src="assets/photos/ramtek.webp" alt="Ramtek town seen from Ramagiri hill" loading="lazy">
+              <div>
+                <h3>Hackathon</h3>
+                <p>For college students and startups. Bring your own idea for a Vidarbha problem in any domain and compete for the ₹1 lakh prize pool.</p>
+                <div class="card__cta"><a class="btn btn--sm" href="#register-team">Register team</a><a class="more" href="#hackathon">Details →</a></div>
+              </div>
+            </li>
+            <li class="card card--photo reveal">
+              <img src="assets/photos/deekshabhoomi.webp" alt="The stupa at Deekshabhoomi, Nagpur" loading="lazy">
+              <div>
+                <h3>Investor pitching</h3>
+                <p>For registered startups. Get screened, then pitch directly to investors on Summit Day.</p>
+                <div class="card__cta"><a class="btn btn--sm" href="#apply-pitch">Apply to pitch</a><a class="more" href="#pitching">Details →</a></div>
+              </div>
+            </li>
+            <li class="card card--photo reveal">
+              <img src="assets/photos/oranges.webp" alt="A heap of Nagpur oranges" loading="lazy">
+              <div>
+                <h3>Expo stalls and demos</h3>
+                <p>For startups and incubators. Show your product to thousands of visitors at the summit.</p>
+                <div class="card__cta"><a class="btn btn--sm" href="#book-stall">Book a stall</a><a class="more" href="#expo">Details →</a></div>
+              </div>
+            </li>
           </ul>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section class="section section--alt" id="vidarbha" data-nav="Vidarbha">
+        <div class="wrap">
+          <p class="eyebrow reveal">The region</p>
+          <h2 class="reveal">This is Vidarbha</h2>
+          <p class="lead reveal">Forests, rivers, history and farmland across eleven districts. This is the home of the problems you will solve.</p>
+          <ul class="gallery">
+            <li class="gallery__big reveal"><img src="assets/photos/tiger.webp" alt="A Bengal tiger walking through tall grass" loading="lazy"><span><b>Tadoba Andhari Tiger Reserve</b>Chandrapur</span></li>
+            <li class="reveal"><img src="assets/photos/lonar.webp" alt="Lonar crater lake seen from the rim" loading="lazy"><span><b>Lonar Crater Lake</b>Buldhana</span></li>
+            <li class="reveal"><img src="assets/photos/sevagram.webp" alt="Bapu Kuti, a tiled hut at Sevagram Ashram" loading="lazy"><span><b>Sevagram Ashram</b>Wardha</span></li>
+            <li class="reveal"><img src="assets/photos/wainganga.webp" alt="The Wainganga river at Markanda" loading="lazy"><span><b>Wainganga river, Markanda</b>Gadchiroli</span></li>
+            <li class="reveal"><img src="assets/photos/kalidas.webp" alt="The Kalidas Memorial pavilion at Ramtek" loading="lazy"><span><b>Kalidas Memorial, Ramtek</b>Nagpur</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" id="meet" data-nav="Who you'll meet">
+        <div class="wrap">
+          <p class="eyebrow reveal">Who you'll meet</p>
+          <h2 class="reveal">The whole ecosystem under one roof</h2>
+          <ul class="cards cards--4">
+            <li class="card reveal"><h3>20+ incubators</h3><p>Government, university and private incubators from across Maharashtra.</p></li>
+            <li class="card reveal"><h3>Government departments</h3><p>Police, MIDC, District Industries Centre, agriculture, healthcare and more.</p></li>
+            <li class="card reveal"><h3>Investors</h3><p>Investors and mentors looking for the region's next growth stories.</p></li>
+            <li class="card reveal"><h3>Colleges</h3><p>Students, faculty and innovators from colleges across Vidarbha.</p></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section section--alt" id="partners" data-nav="Partners">
+        <div class="wrap">
+          <p class="eyebrow reveal">Partners</p>
+          <h2 class="reveal">A joint initiative of</h2>
+          <p class="lead reveal">Bringing together AI technology and startup incubation for Vidarbha.</p>
+          <ul class="cards cards--3">
+            <li class="card card--logo reveal"><h3>aiKart</h3></li>
+            <li class="card card--logo reveal"><h3>SGBAU Research and Incubation Foundation</h3></li>
+            <li class="card card--logo reveal"><h3>Anthropic</h3><p>Technology partner</p></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" id="faq-overview" data-nav="FAQ">
+        <div class="wrap faq">
+          <div><p class="eyebrow reveal">FAQ</p><h2 class="reveal">General questions</h2></div>
+          <div class="faq__list reveal">
+            <details><summary>When and where is the summit?</summary><p>The summit is in Amravati, Maharashtra. The Summit Day date will be announced on this page shortly.</p></details>
+            <details><summary>Is there an entry fee for visitors?</summary><p>Visitor entry details will be shared with the final date. Entry on the day is by QR scan.</p></details>
+            <details><summary>Can school students take part?</summary><p>Not in this hackathon. School students will be covered separately through a School Connect programme.</p></details>
+            <details><summary>Who is behind the summit?</summary><p>The summit is a joint initiative of aiKart and SGBAU Research and Incubation Foundation (Sant Gadge Baba Amravati University).</p></details>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Hackathon -->
+    <div class="view" id="view-hackathon" data-view="hackathon" hidden>
+      <header class="pagehead">
+        <img src="assets/photos/ramtek.webp" alt="" loading="lazy">
+        <div class="wrap">
+          <nav class="crumbs" aria-label="Breadcrumb"><a href="#overview">Overview</a><span>Hackathon</span></nav>
+          <h1>The Hackathon</h1>
+          <p class="lead">Solve a Vidarbha problem. Take it global. An open hackathon for college students and startups, judged by experts from your own field.</p>
+          <dl class="facts">
+            <div><dt>Domains</dt><dd>Open to every domain</dd></div>
+            <div><dt>Prize pool</dt><dd>₹1,00,000</dd></div>
+            <div><dt>Registration fee</dt><dd>₹1,499</dd></div>
+          </dl>
+          <a class="btn" href="#register-team">Register your team <span aria-hidden="true">→</span></a>
+        </div>
+      </header>
+      <div class="subnav" data-subnav></div>
+
+      <section class="section" id="how" data-nav="How it works">
+        <div class="wrap path">
+          <div class="path__head">
+            <p class="eyebrow reveal">How it works</p>
+            <h2 class="reveal">From application to the summit stage</h2>
+          </div>
+          <ol class="steps">
+            <li class="reveal"><b>From 3 Nov</b><h3>Register and apply</h3><p>Pay the fee, choose your domain and upload your pitch deck.</p></li>
+            <li class="reveal"><b>Ongoing</b><h3>Screening</h3><p>Entries are reviewed as they arrive. Results come with the shortlist.</p></li>
+            <li class="reveal"><b>2nd week of Dec</b><h3>Online round</h3><p>Shortlisted teams present to domain juries online.</p></li>
+            <li class="reveal"><b>About 5 days later</b><h3>Physical round</h3><p>About 15 teams present in person in Amravati.</p></li>
+            <li class="reveal"><b>Before Summit Day</b><h3>Grand finale</h3><p>Top teams are ranked overall and showcased at the summit.</p></li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section section--alt" id="areas" data-nav="Focus areas">
+        <div class="wrap split split--top">
+          <div>
+            <p class="eyebrow reveal">Focus areas</p>
+            <h2 class="reveal">Open to every domain</h2>
+            <ul class="chips reveal">
+              <li>Artificial Intelligence</li><li>Robotics</li><li>Defence Technology</li><li>Drones</li><li>Internet of Things</li><li>Agriculture</li><li>Healthcare</li>
+            </ul>
+            <p class="lead reveal">The theme is open. There are no fixed categories or problem statements: bring your own idea for a real Vidarbha problem in any domain. The focus areas above are only examples, and the top teams are ranked overall.</p>
+          </div>
+          <div class="kit reveal">
+            <h3>How entries are judged</h3>
+            <ul>
+              <li>You choose your domain in the form</li>
+              <li>Each entry goes to a jury from that field</li>
+              <li>Entries are judged on a working solution or pilot</li>
+              <li>Final results are an overall ranking across all domains</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="eligibility" data-nav="Who can apply">
+        <div class="wrap split split--top">
+          <div class="reveal">
+            <h2>Who can apply</h2>
+            <ul class="checks">
+              <li>College students from any discipline</li>
+              <li>Startups up to 12 years old, with revenue under ₹100 crore</li>
+              <li>Teams from outside Vidarbha are welcome, as long as the solution addresses a Vidarbha problem</li>
+            </ul>
+          </div>
+          <div class="reveal">
+            <h2>What you'll need</h2>
+            <ul class="checks">
+              <li>Team and contact details</li>
+              <li>Your domain</li>
+              <li>A short description of the problem and your solution</li>
+              <li>Your pitch deck (upload)</li>
+              <li>Registration fee of ₹1,499, paid online</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="prizes" id="prizes" data-nav="Prizes">
+        <span class="coin coin--a" aria-hidden="true">₹</span>
+        <span class="coin coin--b" aria-hidden="true">₹</span>
+        <span class="coin coin--c" aria-hidden="true">₹</span>
+        <span class="coin coin--d" aria-hidden="true">₹</span>
+        <div class="wrap">
+          <p class="prizes__kicker reveal">What will you get?</p>
+          <h2 class="prizes__title reveal">
+            Total prize pool of
+            <span class="scribble">
+              <span data-count="100000">₹1,00,000</span>
+              <svg viewBox="0 0 300 16" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M4 11C62 5 118 4 176 6c38 1 76 1 120-1-38 3-76 6-112 9"/></svg>
+            </span>
+          </h2>
+          <ol class="podium" data-podium>
+            <li class="podium__col podium__col--1">
+              <div class="podium__card"><strong data-count="50000">₹50,000</strong><span>1st prize</span></div>
+              <div class="podium__step" aria-hidden="true">1</div>
+            </li>
+            <li class="podium__col podium__col--2">
+              <div class="podium__card"><strong data-count="30000">₹30,000</strong><span>2nd prize</span></div>
+              <div class="podium__step" aria-hidden="true">2</div>
+            </li>
+            <li class="podium__col podium__col--3">
+              <div class="podium__card"><strong data-count="20000">₹20,000</strong><span>3rd prize</span></div>
+              <div class="podium__step" aria-hidden="true">3</div>
+            </li>
+          </ol>
+          <ul class="perks">
+            <li class="reveal"><b>Consolation prizes</b><span>For other strong entries.</span></li>
+            <li class="reveal"><b>Summit showcase</b><span>Finalists showcase their work at the summit.</span></li>
+            <li class="reveal"><b>Incubation</b><span>Promising teams may be offered incubation.</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="register" id="register" data-nav="Register">
+        <div class="wrap register__row">
+          <div>
+            <h2 class="reveal">Register your team for the hackathon</h2>
+            <p class="lead reveal">Registration opens on 3 November 2026. After payment, you go straight to the form where you choose your domain and upload your pitch deck.</p>
+          </div>
+          <div class="kit reveal">
+            <p class="kit__label">Registration fee</p>
+            <p class="kit__price">₹1,499</p>
+            <p class="kit__sub">Early-bird price for the first 100 teams</p>
+            <a class="btn" href="#register-team">Register now <span aria-hidden="true">→</span></a>
+            <p class="kit__sub">Open to college students and startups</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--alt" id="faq-hackathon" data-nav="FAQ">
+        <div class="wrap faq">
+          <div><p class="eyebrow reveal">FAQ</p><h2 class="reveal">Hackathon questions</h2></div>
+          <div class="faq__list reveal">
+            <details><summary>Are there separate categories or tracks?</summary><p>No. The hackathon is open to every domain, and the top teams are ranked overall. You choose your domain in the form so that experts from your field judge your entry.</p></details>
+            <details><summary>Can teams from outside Vidarbha apply?</summary><p>Yes. Teams from Pune, Mumbai and other states are welcome, as long as their solution addresses a problem in Vidarbha.</p></details>
+            <details><summary>Do we need a working prototype?</summary><p>Entries are judged on a working solution or pilot, so the further along your solution is, the stronger your entry.</p></details>
+            <details><summary>When will we hear if we are shortlisted?</summary><p>Entries are screened as they arrive, and all teams are informed when the shortlist for the online round is announced.</p></details>
+            <details><summary>Can school students take part?</summary><p>Not in this hackathon. School students will be covered separately through a School Connect programme.</p></details>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Pitching -->
+    <div class="view" id="view-pitching" data-view="pitching" hidden>
+      <header class="pagehead">
+        <img src="assets/photos/deekshabhoomi.webp" alt="" loading="lazy">
+        <div class="wrap">
+          <nav class="crumbs" aria-label="Breadcrumb"><a href="#overview">Overview</a><span>Pitching</span></nav>
+          <h1>Investor Pitching</h1>
+          <p class="lead">Put your startup in front of investors on Summit Day. Startups are screened before the summit, and the shortlist pitches directly to investors.</p>
+          <dl class="facts">
+            <div><dt>Applications</dt><dd>1st week of Nov to 1st week of Dec</dd></div>
+            <div><dt>Investor time</dt><dd>10 to 15 minutes</dd></div>
+            <div><dt>Requirement</dt><dd>Private Limited company</dd></div>
+          </dl>
+          <a class="btn" href="#apply-pitch">Apply to pitch <span aria-hidden="true">→</span></a>
+        </div>
+      </header>
+      <div class="subnav" data-subnav></div>
+
+      <section class="section" id="format" data-nav="Pitch format">
+        <div class="wrap">
+          <p class="eyebrow reveal">Pitch format</p>
+          <h2 class="reveal">Two stages to the investor table</h2>
+          <ul class="cards cards--2">
+            <li class="card reveal"><p class="card__big">3 to 4 min</p><p>Screening pitch to the selection panel</p></li>
+            <li class="card reveal"><p class="card__big">10 to 15 min</p><p>Shortlisted startups pitch to investors</p></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section section--alt" id="who-pitch" data-nav="Who can pitch">
+        <div class="wrap split split--top">
+          <div class="reveal">
+            <h2>Who can pitch</h2>
+            <ul class="checks">
+              <li>Startups from every sector</li>
+              <li>Private Limited registration is required</li>
+              <li>DPIIT recognition is not required. SRIF will help selected startups obtain it.</li>
+            </ul>
+          </div>
+          <div class="reveal">
+            <h2>What you get</h2>
+            <ul class="checks">
+              <li>Direct time with investors on Summit Day</li>
+              <li>Access to 20+ incubators in one hall</li>
+              <li>Access to incubator-run schemes such as Startup India</li>
+              <li>Meetings with government departments looking for solutions</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="selection" data-nav="Selection">
+        <div class="wrap path">
+          <div class="path__head">
+            <p class="eyebrow reveal">Selection</p>
+            <h2 class="reveal">How startups are selected</h2>
+            <p class="lead reveal">All curation is completed before the summit.</p>
+          </div>
+          <ol class="steps">
+            <li class="reveal"><b>1st week of Nov</b><h3>Applications open</h3><p>Submit your company details and pitch deck.</p></li>
+            <li class="reveal"><b>1st week of Dec</b><h3>Applications close</h3><p>Last date to apply.</p></li>
+            <li class="reveal"><b>December</b><h3>Screening pitch</h3><p>A 3 to 4 minute pitch to the selection panel.</p></li>
+            <li class="reveal"><b>8 days before</b><h3>Shortlist announced</h3><p>Selected startups are told at least 8 days before the summit.</p></li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="register" id="apply" data-nav="Apply">
+        <div class="wrap register__row">
+          <div>
+            <h2 class="reveal">Apply to pitch at the summit</h2>
+            <p class="lead reveal">The startup call for applications opens in the first week of November 2026. Keep your pitch deck and company registration ready.</p>
+          </div>
+          <div class="kit reveal">
+            <p class="kit__label">Startup applications</p>
+            <p class="kit__price">Opening soon</p>
+            <p class="kit__sub">1st week of November to 1st week of December</p>
+            <a class="btn" href="#apply-pitch">Apply now <span aria-hidden="true">→</span></a>
+            <p class="kit__sub">Private Limited startups from every sector</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--alt" id="faq-pitching" data-nav="FAQ">
+        <div class="wrap faq">
+          <div><p class="eyebrow reveal">FAQ</p><h2 class="reveal">Pitching questions</h2></div>
+          <div class="faq__list reveal">
+            <details><summary>Does my startup need DPIIT recognition?</summary><p>No. Private Limited registration is required; DPIIT recognition is not. SRIF will help selected startups get it during curation.</p></details>
+            <details><summary>Is a specific sector required?</summary><p>No. Startups from every sector can apply.</p></details>
+            <details><summary>Who are the investors?</summary><p>The investor list will be published on this page once the summit date is final.</p></details>
+            <details><summary>Can a hackathon startup also pitch?</summary><p>Rules for startups taking part in both will be published with the startup call.</p></details>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Expo -->
+    <div class="view" id="view-expo" data-view="expo" hidden>
+      <header class="pagehead">
+        <img src="assets/photos/bamboo.webp" alt="" loading="lazy">
+        <div class="wrap">
+          <nav class="crumbs" aria-label="Breadcrumb"><a href="#overview">Overview</a><span>Expo &amp; Demos</span></nav>
+          <h1>Expo &amp; Demos</h1>
+          <p class="lead">A full-day expo of startups, incubators and hackathon prototypes. Set up a stall, run live demos and meet thousands of visitors, investors and officials.</p>
+          <dl class="facts">
+            <div><dt>Timing</dt><dd>Summit Day, 9:00 AM to 7:00 PM</dd></div>
+            <div><dt>Expected visitors</dt><dd>5,000+</dd></div>
+            <div><dt>Incubators</dt><dd>20+ with stalls</dd></div>
+          </dl>
+          <a class="btn" href="#book-stall">Book a stall <span aria-hidden="true">→</span></a>
+        </div>
+      </header>
+      <div class="subnav" data-subnav></div>
+
+      <section class="section" id="exhibitors" data-nav="Who exhibits">
+        <div class="wrap">
+          <p class="eyebrow reveal">Who exhibits</p>
+          <h2 class="reveal">Startups, incubators and prototypes</h2>
+          <p class="lead reveal">Expo space is planned at about 70% startups and 30% incubators.</p>
+          <div class="share reveal" aria-hidden="true"><span style="flex:7">Startups ~70%</span><span style="flex:3">Incubators ~30%</span></div>
+          <ul class="cards cards--3">
+            <li class="card reveal"><h3>Curated startups</h3><p>Startups selected through the call for applications, from every sector.</p></li>
+            <li class="card reveal"><h3>Incubators</h3><p>12 to 13 government and university incubators from Maharashtra, plus private incubators.</p></li>
+            <li class="card reveal"><h3>Hackathon prototypes</h3><p>Working solutions from the hackathon finalists, including hardware.</p></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section section--alt" id="stall" data-nav="Stalls">
+        <div class="wrap split split--top">
+          <div class="reveal">
+            <h2>What each stall gets</h2>
+            <ul class="checks">
+              <li>A stall space in the expo hall</li>
+              <li>Room for a representative and live demos</li>
+              <li>Space for pamphlets and a QR code so visitors can connect</li>
+              <li>Listing in the summit's exhibitor directory</li>
+            </ul>
+          </div>
+          <div class="reveal">
+            <h2>Running a good demo</h2>
+            <ul class="checks">
+              <li>Bring a working product or prototype visitors can try</li>
+              <li>Hardware demos are welcome</li>
+              <li>Keep a one-page summary and contact QR ready</li>
+              <li>Power and stall layout details will be shared with selected exhibitors</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="showcase" data-nav="Hackathon showcase">
+        <div class="wrap">
+          <p class="eyebrow reveal">Hackathon showcase</p>
+          <h2 class="reveal">A dedicated station for hackathon finalists</h2>
+          <p class="lead reveal">The hackathon finale runs before Summit Day. Its finalists then show their working solutions at a dedicated showcase station in the expo, in front of investors, incubators and government departments.</p>
+          <p class="reveal"><a class="more" href="#hackathon">About the hackathon →</a></p>
+          <ul class="cards cards--4">
+            <li class="card reveal"><h3>Finalists</h3><p>The top teams from the grand finale.</p></li>
+            <li class="card reveal"><h3>Live prototypes</h3><p>Software and hardware, shown working.</p></li>
+            <li class="card reveal"><h3>Incubation talks</h3><p>Promising teams may be offered incubation.</p></li>
+            <li class="card reveal"><h3>Adoption</h3><p>Government departments see solutions they can put to work.</p></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section section--alt" id="visitors" data-nav="Visitors">
+        <div class="wrap">
+          <p class="eyebrow reveal">Visitors</p>
+          <h2 class="reveal">Who walks the expo floor</h2>
+          <ul class="cards cards--4">
+            <li class="card reveal"><h3>Students</h3><p>From colleges across Vidarbha.</p></li>
+            <li class="card reveal"><h3>Professors</h3><p>Faculty and principals from the region.</p></li>
+            <li class="card reveal"><h3>Investors</h3><p>Looking for startups to back.</p></li>
+            <li class="card reveal"><h3>Officials</h3><p>Government departments and leaders.</p></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="register" id="book" data-nav="Book a stall">
+        <div class="wrap register__row">
+          <div>
+            <h2 class="reveal">Book a stall at the expo</h2>
+            <p class="lead reveal">Startups apply for a stall through the startup call for applications. Incubators interested in a stall can register their interest with SRIF.</p>
+          </div>
+          <div class="kit reveal">
+            <p class="kit__label">Stall booking</p>
+            <p class="kit__price">Opening soon</p>
+            <p class="kit__sub">Startup call opens in the 1st week of November</p>
+            <a class="btn" href="#book-stall">Book a stall <span aria-hidden="true">→</span></a>
+            <p class="kit__sub">Stall layout will be shared once the venue is final</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section--alt" id="faq-expo" data-nav="FAQ">
+        <div class="wrap faq">
+          <div><p class="eyebrow reveal">FAQ</p><h2 class="reveal">Expo questions</h2></div>
+          <div class="faq__list reveal">
+            <details><summary>Who can get a stall?</summary><p>Curated startups selected through the call for applications, incubators, and the hackathon finalists at the showcase station.</p></details>
+            <details><summary>Can we bring hardware?</summary><p>Yes. Hardware prototypes and live demos are welcome.</p></details>
+            <details><summary>Is there a stall fee?</summary><p>Stall details, including any fee, will be shared with selected exhibitors.</p></details>
+            <details><summary>When will we know our stall location?</summary><p>The stall layout will be shared once the venue is measured and the date is final.</p></details>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Forms: fields are built by forms.js -->
+    <div class="view" id="view-register-team" data-view="register-team" hidden>
+      <header class="pagehead pagehead--plain">
+        <div class="wrap">
+          <nav class="crumbs" aria-label="Breadcrumb"><a href="#overview">Overview</a><a href="#hackathon">Hackathon</a><span>Register</span></nav>
+          <h1>Hackathon registration</h1>
+          <p class="lead">Register your team, pay the fee, then submit your idea and pitch deck.</p>
+        </div>
+      </header>
+      <div class="wrap formwrap" data-form="hackathon"></div>
+    </div>
+
+    <div class="view" id="view-apply-pitch" data-view="apply-pitch" hidden>
+      <header class="pagehead pagehead--plain">
+        <div class="wrap">
+          <nav class="crumbs" aria-label="Breadcrumb"><a href="#overview">Overview</a><a href="#pitching">Pitching</a><span>Apply</span></nav>
+          <h1>Apply to pitch</h1>
+          <p class="lead">Tell us about your startup. Shortlisted startups give a 3 to 4 minute screening pitch, then 10 to 15 minutes with investors on Summit Day.</p>
+        </div>
+      </header>
+      <div class="wrap formwrap" data-form="pitching"></div>
+    </div>
+
+    <div class="view" id="view-book-stall" data-view="book-stall" hidden>
+      <header class="pagehead pagehead--plain">
+        <div class="wrap">
+          <nav class="crumbs" aria-label="Breadcrumb"><a href="#overview">Overview</a><a href="#expo">Expo &amp; Demos</a><span>Book a stall</span></nav>
+          <h1>Book an expo stall</h1>
+          <p class="lead">For startups, incubators and organisations that want to show their work at the summit expo.</p>
+        </div>
+      </header>
+      <div class="wrap formwrap" data-form="stall"></div>
+    </div>
   </main>
 
   <footer class="footer">
-    <div class="wrap footer__row">
+    <div class="wrap footer__grid">
       <div>
-        <p class="footer__name">Vidarbha Innovation Summit 2026</p>
-        <p>AIKart in collaboration with Sant Gadge Baba Amravati University · SRIF</p>
+        <img class="footer__logo" src="assets/logo-full.webp" alt="Vidarbh Innovation Summit 2026: Ideas, Technology, Prosperity" width="390" height="144" loading="lazy">
+        <p class="footer__label">A joint initiative of</p>
+        <p class="footer__name">aiKart · SGBAU Research and Incubation Foundation</p>
         <p>Technology partner: Anthropic</p>
+        <p>Amravati, Maharashtra</p>
       </div>
-      <a href="#top">Back to top ↑</a>
+      <nav aria-label="Summit">
+        <p class="footer__label">Summit</p>
+        <a href="#overview">Overview</a>
+        <a href="#overview/agenda">Agenda</a>
+        <a href="#overview/dates">Key dates</a>
+      </nav>
+      <nav aria-label="Take part">
+        <p class="footer__label">Take part</p>
+        <a href="#register-team">Register for the hackathon</a>
+        <a href="#apply-pitch">Apply to pitch</a>
+        <a href="#book-stall">Book an expo stall</a>
+      </nav>
     </div>
+    <div class="wrap footer__end">
+      <p>© 2026 Vidarbh Innovation Summit. All rights reserved.</p>
+      <p>Viksit Bharat · From Vidarbha to Global</p>
+    </div>
+    <details class="wrap credits">
+      <summary>Photo credits</summary>
+      <p>Photos from Wikimedia Commons, used under their free licences.</p>
+      <ul>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Bengal_tiger_at_Tadoba_Andhari_Tiger_Reserve,_Maharashtra,_India.jpg" rel="noopener" target="_blank">Bengal tiger at Tadoba Andhari Tiger Reserve, Maharashtra, India</a> by Rohit Sharma, <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="noopener" target="_blank">CC BY-SA 4.0</a>. Resized.</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Lonar_Crater_seen_from_above.jpg" rel="noopener" target="_blank">Lonar Crater seen from above</a> by Dhruva Punde, <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="noopener" target="_blank">CC BY-SA 4.0</a>. Resized.</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Deekshabhoomi,_Nagpur_in_India.jpg" rel="noopener" target="_blank">Deekshabhoomi, Nagpur in India</a> by Prakash Lokhande, <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="noopener" target="_blank">CC BY-SA 4.0</a>. Resized.</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:0101821_A_view_of_Ramtek_town_from_Ramagiri_hill_and_Ram_temples_complex,_Maharashtra.jpg" rel="noopener" target="_blank">0101821 A view of Ramtek town from Ramagiri hill and Ram temples complex, Maharashtra</a> by Ms Sarah Welch, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en" rel="noopener" target="_blank">CC0</a>. Resized.</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Wainganga_river_and_Markandi_temples_ghat,_Markanda_Maharastra.jpg" rel="noopener" target="_blank">Wainganga river and Markandi temples ghat, Markanda Maharastra</a> by Ms Sarah Welch, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en" rel="noopener" target="_blank">CC0</a>. Resized.</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Nagpur_orange_article.JPG" rel="noopener" target="_blank">Nagpur orange article</a> by Cherishsantosh, <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="noopener" target="_blank">CC BY-SA 4.0</a>. Resized.</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Bamboo-Lined_Forest_Trail_in_Tadoba_Andhari_National_Park.jpg" rel="noopener" target="_blank">Bamboo-Lined Forest Trail in Tadoba Andhari National Park</a> by Rohit Sharma, <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="noopener" target="_blank">CC BY-SA 4.0</a>. Resized.</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Bapu_Kuti_in_Sevagram_Ashram1-Wardha-Maharashtra.jpg" rel="noopener" target="_blank">Bapu Kuti in Sevagram Ashram1-Wardha-Maharashtra</a> by सुबोध कुलकर्णी, <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="noopener" target="_blank">CC BY-SA 4.0</a>. Resized.</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Entrance_of_Ambadevi_Temple,_Amravati.jpg" rel="noopener" target="_blank">Entrance of Ambadevi Temple, Amravati</a> by Ganesh Dhamodkar, <a href="https://creativecommons.org/licenses/by-sa/4.0" rel="noopener" target="_blank">CC BY-SA 4.0</a>. Resized.</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:0101721_Kalidas_Memorial,_Ramtek_Maharashtra_004.jpg" rel="noopener" target="_blank">0101721 Kalidas Memorial, Ramtek Maharashtra 004</a> by Ms Sarah Welch, <a href="http://creativecommons.org/publicdomain/zero/1.0/deed.en" rel="noopener" target="_blank">CC0</a>. Resized.</li>
+      </ul>
+    </details>
   </footer>
-
 </body>
 </html>

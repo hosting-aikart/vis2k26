@@ -1,9 +1,10 @@
-// Paste the registration form link here when it is live. Every Register button
-// then opens it, and the "Registration opens soon" state goes away.
-const REGISTER_URL = '';
-
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+const views = new Map($$('[data-view]').map((el) => [el.dataset.view, el]));
+
+// Forms belong to a parent page, so its tab stays lit while filling one in.
+const TAB_FOR = { 'register-team': 'hackathon', 'apply-pitch': 'pitching', 'book-stall': 'expo' };
 
 function setupNav() {
   const nav = document.querySelector('[data-nav]');
@@ -14,8 +15,13 @@ function setupNav() {
     toggle.setAttribute('aria-expanded', String(open));
   };
 
-  const onScroll = () => nav.classList.toggle('is-stuck', scrollY > 24);
+  const onScroll = () => {
+    const onHero = !views.get('overview').hidden && scrollY <= 24;
+    nav.classList.toggle('is-stuck', !onHero);
+  };
   addEventListener('scroll', onScroll, { passive: true });
+  addEventListener('hashchange', onScroll);
+  addEventListener('load', onScroll);
   onScroll();
 
   toggle.addEventListener('click', () => setOpen(!nav.classList.contains('is-open')));
@@ -25,25 +31,43 @@ function setupNav() {
   });
 }
 
-function setupRegister() {
-  if (!REGISTER_URL) return;
-
-  $$('[data-register]').forEach((link) => {
-    link.href = REGISTER_URL;
-    link.target = '_blank';
-    link.rel = 'noopener';
+// Each page's sub-menu comes from its own sections, so the two cannot drift apart.
+function buildSubnavs() {
+  views.forEach((view, name) => {
+    const host = view.querySelector('[data-subnav]');
+    if (!host) return;
+    const links = $$('[data-nav]', view).map((section) => {
+      const link = document.createElement('a');
+      link.href = `#${name}/${section.id}`;
+      link.textContent = section.dataset.nav;
+      return link;
+    });
+    const row = document.createElement('nav');
+    row.className = 'wrap';
+    row.setAttribute('aria-label', 'On this page');
+    row.append(...links);
+    host.append(row);
   });
-
-  const main = document.querySelector('[data-register-main]');
-  main.classList.remove('is-off');
-  main.removeAttribute('aria-disabled');
-  main.textContent = 'Register your team';
-  document.querySelector('[data-register-note]').textContent = 'Registration is open. Here’s what you’ll need.';
 }
 
-function buildClock() {
-  const ticks = document.querySelector('.clock__ticks');
-  ticks.append(...Array.from({ length: 13 }, () => document.createElement('i')));
+function route() {
+  const [name = '', sectionId] = location.hash.slice(1).split('/');
+  // Plain anchors such as the skip link are left to the browser.
+  if (name && !views.has(name)) return;
+
+  const current = name || 'overview';
+  const changed = views.get(current).hidden;
+  views.forEach((view, key) => { view.hidden = key !== current; });
+  $$('[data-tab]').forEach((tab) => {
+    const active = tab.dataset.tab === (TAB_FOR[current] || current);
+    tab.classList.toggle('is-active', active);
+    if (active) tab.setAttribute('aria-current', 'page');
+    else tab.removeAttribute('aria-current');
+  });
+
+  const target = sectionId && document.getElementById(sectionId);
+  if (target) target.scrollIntoView();
+  else if (changed || !sectionId) scrollTo({ top: 0, behavior: 'instant' });
 }
 
 // Numbers are already correct in the HTML; this only animates them on reveal.
@@ -64,7 +88,7 @@ function countUp(el) {
 
 function setupReveal() {
   if (reducedMotion || !('IntersectionObserver' in window)) {
-    $$('.reveal, .podium, .clock, .scribble').forEach((el) => el.classList.add('in'));
+    $$('.reveal, .podium, .scribble').forEach((el) => el.classList.add('in'));
     return;
   }
 
@@ -80,7 +104,8 @@ function setupReveal() {
   $$('.reveal, .podium').forEach((el) => observer.observe(el));
 }
 
+buildSubnavs();
 setupNav();
-setupRegister();
-buildClock();
 setupReveal();
+route();
+addEventListener('hashchange', route);

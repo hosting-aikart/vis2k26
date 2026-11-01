@@ -26,6 +26,9 @@
     return stops[i].map((c, k) => lerp(c, stops[i + 1][k], at - i));
   }
 
+  // Set to true to bring the glass star back between the fingertips.
+  const SHOW_STAR = false;
+
   /* Star: six hooked arms of solid glass, ray-marched per pixel so it gets real
      reflections, refraction and rounded edges that catch the light. */
 
@@ -225,7 +228,7 @@
     };
   }
 
-  const star = createStar(starBox);
+  const star = SHOW_STAR ? createStar(starBox) : { resize() {}, draw() {} };
 
   /* Hands */
 
@@ -343,18 +346,19 @@
     const handScale = (width) => width / (HAND_LENGTH * FRAME_W);
 
     if (portrait) {
-      const spread = size * 0.44;
-      const tipY = cy + size * 0.56;
+      const spread = SHOW_STAR ? size * 0.44 : W * 0.012;
+      const lean = SHOW_STAR ? 1.02 : 0.8;
+      const tipY = SHOW_STAR ? cy + size * 0.56 : cy;
       hands = [
-        sampleHand(strips.robot, { tipX: cx - spread, tipY, rotate: -1.02, scale: handScale(W * 0.42), mirror: false, pitch, colors: silver, dir: -1, delay: 0 }),
-        sampleHand(strips.human, { tipX: cx + spread, tipY, rotate: 1.02, scale: handScale(W * 0.42), mirror: true, pitch, colors: skin, dir: 1, delay: 0.35 }),
+        sampleHand(strips.robot, { tipX: cx - spread, tipY, rotate: -lean, scale: handScale(W * 0.42), mirror: false, pitch, colors: silver, dir: -1, delay: 0 }),
+        sampleHand(strips.human, { tipX: cx + spread, tipY, rotate: lean, scale: handScale(W * 0.42), mirror: true, pitch, colors: skin, dir: 1, delay: 0.35 }),
       ];
       return;
     }
 
     const limit = area.height * 0.92;
-    const gap = size * 0.6;
-    const lift = size * 0.2;
+    const gap = SHOW_STAR ? size * 0.6 : W * 0.005;
+    const lift = SHOW_STAR ? size * 0.2 : 0;
 
     // Robot high on the left, human nearly level on the right so its whole hand
     // clears the bottom of the hero. Both fingertips sit on the star.
@@ -483,19 +487,23 @@
     ctx.globalCompositeOperation = 'lighter';
     ctx.globalAlpha = alpha;
     drawGlow(size * 3 * breathe, [[0, 'rgb(124 58 237 / .26)'], [0.5, 'rgb(90 40 200 / .08)'], [1, 'rgb(60 20 160 / 0)']]);
-    drawRays(t, 1);
+    if (SHOW_STAR) drawRays(t, 1);
     ctx.globalAlpha = 1;
     ctx.globalCompositeOperation = 'source-over';
 
     hands.forEach((hand) => drawHand(hand, t, intro));
 
-    drawStar(t, grow * (1 + touch * 0.1), alpha, Math.max(touch, burst));
+    if (SHOW_STAR) drawStar(t, grow * (1 + touch * 0.1), alpha, Math.max(touch, burst));
 
     ctx.globalCompositeOperation = 'lighter';
     if (touch > 0) {
       drawGlow(size * (4 - 2.6 * touch), [[0, `rgb(255 230 240 / ${0.7 * touch})`], [0.4, `rgb(170 110 255 / ${0.3 * touch})`], [1, 'rgb(90 40 200 / 0)']]);
     }
-    if (burst > 0) {
+    // With no star, a small spark marks the point where the fingertips meet.
+    if (!SHOW_STAR && intro > TOUCH - 0.2) {
+      drawGlow(size * 0.26 * breathe, [[0, 'rgb(255 255 255 / .9)'], [0.25, 'rgb(204 204 255 / .45)'], [1, 'rgb(139 92 246 / 0)']]);
+    }
+    if (SHOW_STAR && burst > 0) {
       drawGlow(size * (3.6 - 2.4 * burst), [[0, `rgb(255 220 235 / ${0.55 * burst})`], [0.4, `rgb(150 90 255 / ${0.25 * burst})`], [1, 'rgb(90 40 200 / 0)']]);
     }
     ctx.globalCompositeOperation = 'source-over';
